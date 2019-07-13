@@ -56,11 +56,15 @@ end
 # Bonus: Make it handle a few collective nouns like "sheep", "geese", "children", "people" and "species".
 
 def pluralizer (noun, num)
-   if num == 1 || noun == "sheep"
+   if num == 1 || noun == "sheep" || noun == "geese"
        "#{num} #{noun}"
    else
-       "#{num} #{noun}s"
+       if noun == "child"
+           "#{num} #{noun}ren"
+       elsif noun == "person"
+           "#{num} people"
+       else
+           "#{num} #{noun}s"
+       end
    end
 end
-
-pluralizer("dog", 2)
